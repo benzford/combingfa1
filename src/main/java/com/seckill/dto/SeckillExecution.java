@@ -3,7 +3,7 @@ package com.seckill.dto;
 import com.seckill.entity.SuccessKilled;
 
 /**
- * 封装秒杀执行结果
+ * 封装秒杀执行结果!
  */
 public class SeckillExecution {
     private long seckillId;
