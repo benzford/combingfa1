@@ -14,6 +14,9 @@ import org.slf4j.LoggerFactory;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * 哈哈
+ */
 public class SeckillServiceImpl implements SeckillService {
     private Logger logger= LoggerFactory.getLogger(this.getClass());
     private SeckillDao seckillDao;
