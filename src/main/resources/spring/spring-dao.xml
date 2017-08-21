@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--<bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource">-->
+        <!--<property name="driverClass" value="${driver}"/>-->
+        <!--<property name="jdbcUrl" value="${url}"/>-->
+        <!--<property name="user" value="${username}"/>-->
+        <!--<property name="password" value="${password}"/>-->
+        <!--&lt;!&ndash;<property name="maxPoolSize" value="20"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="minPoolSize" value="10"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;关闭链接后不自动commit&ndash;&gt;-->
+        <!--<property name="autoCommitOnClose" value="false"/>-->
+        <!--&lt;!&ndash;获取链接超时时间&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="checkoutTimeout" value="10000"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;当获取链接失败重试次数&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="acquireRetryAttempts" value="5"/>&ndash;&gt;-->
+    <!--</bean>-->
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="username" value="root"/>
+        <property name="password" value="111111"/>
+        <property name="url" value="jdbc:mysql:///seckill"/>
+    </bean>
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+        <property name="dataSource" ref="dataSource"/>
+        <!--全局配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--扫描entity包,使用别名-->
+        <property name="typeAliasesPackage" value="com.seckill.entity"/>
+        <!--扫描sql配置文件(mapper)-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+    <!--配置dao接口扫描,注入spring容器-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    <property name="basePackage" value="com.seckill.dao"/>
+
+</bean>
+</beans>
