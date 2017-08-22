@@ -22,7 +22,7 @@ public interface SeckillService {
     List<Seckill> getSeckillList();
 
     /**
-     * 查询单个秒杀接口
+     * 查询单个秒杀记录
      * @param seckillId
      * @return
      */

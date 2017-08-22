@@ -7,7 +7,7 @@ public class SuccessKilled {
     private long userPhone;
     private short state;
     private Date createTime;
-    private Seckill seckill;
+    private Seckill seckill;//多对一关系
 
     public Seckill getSeckill() {
         return seckill;

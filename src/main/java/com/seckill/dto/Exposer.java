@@ -11,7 +11,12 @@ public class Exposer {
     private long start;
     private long end;
 
-    public Exposer(boolean exposed, String md5,long seckillId) {
+    public Exposer(boolean exposed, long seckillId) {
+        this.exposed = exposed;
+        this.seckillId = seckillId;
+    }
+
+    public Exposer(boolean exposed, String md5, long seckillId) {
         this.exposed = exposed;
         this.seckillId = seckillId;
         this.md5 = md5;
@@ -73,9 +78,4 @@ public class Exposer {
         this.end = end;
     }
 
-    public Exposer(boolean exposed, long seckillId) {
-
-        this.exposed = exposed;
-        this.seckillId = seckillId;
-    }
 }
