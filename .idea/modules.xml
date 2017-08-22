@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/combingfa1.iml" filepath="$PROJECT_DIR$/combingfa1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.bingfa1.iml" filepath="$PROJECT_DIR$/com.bingfa1.iml" />
     </modules>
   </component>
 </project>

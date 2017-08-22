@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="com.bingfa1" />
         <module name="combingfa1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com.bingfa1" target="1.5" />
       <module name="combingfa1" target="1.5" />
     </bytecodeTargetLevel>
   </component>
