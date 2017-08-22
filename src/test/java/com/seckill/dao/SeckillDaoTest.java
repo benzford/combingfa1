@@ -18,14 +18,6 @@ import static org.junit.Assert.*;
 public class SeckillDaoTest {
     @Resource
     SeckillDao seckillDao;
-
-    @Test
-    public void reduceNumber() throws Exception {
-        Date date = new Date();
-        int i = seckillDao.reduceNumber(1000L, date);
-        System.out.println(i);
-    }
-
     @Test
     public void queryById() throws Exception {
         long id = 1000;
@@ -38,6 +30,14 @@ Seckill{SeckillId=1000, name='1000元秒杀iphone6', number=100, startTime=Thu J
 
          */
     }
+
+    @Test
+    public void reduceNumber() throws Exception {
+        Date date = new Date();
+        int i = seckillDao.reduceNumber(1000L, date);
+        System.out.println(i);
+    }
+
 
     @Test
     public void queryAll() throws Exception {
