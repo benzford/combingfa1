@@ -5,11 +5,15 @@
     <artifactId>com.bingfa1</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>com.bingfa1 Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <url>http://www.baidu.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.locales>zh_CN</project.build.locales>
+        <java.version>1.8</java.version>
+        <project.build.jdk>${java.version}</project.build.jdk>
         <spring.version>4.1.7.RELEASE</spring.version>
+        <javassist.version>3.20-GA</javassist.version>
     </properties>
     <dependencies>
         <dependency>
