@@ -78,4 +78,16 @@ public class Exposer {
         this.exposed = exposed;
         this.seckillId = seckillId;
     }
+
+    @Override
+    public String toString() {
+        return "Exposer{" +
+                "exposed=" + exposed +
+                ", seckillId=" + seckillId +
+                ", md5='" + md5 + '\'' +
+                ", now=" + now +
+                ", start=" + start +
+                ", end=" + end +
+                '}';
+    }
 }
