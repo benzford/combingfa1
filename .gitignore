@@ -25,3 +25,4 @@ hs_err_pid*
 
 /.idea/
 /com.bingfa1.iml
+/target/
