@@ -63,7 +63,7 @@ public class SeckillServiceImpl implements SeckillService {
     /**
      * 使用注解控制事务方法的优点
      * 1.开发团队达成一致,明确标注事务方法的编程风格
-     * 2.保证事务方法的执行时间尽可能短,不要穿插其他的网络操作RPC/HTTP请求(毫秒级别)或者玻璃到事务方法外部
+     * 2.保证事务方法的执行时间尽可能短,不要穿插其他的网络操作RPC/HTTP请求(毫秒级别)或者剥离到事务方法外部
      * 3.不是所有方法都需要事务,如只有一条修改操作,只读操作不需要事务控制
      */
     public SeckillExecution executeSeckill(long seckillId, long userPhone, String md5) throws SeckillException, SeckillCloseException, RepeatKillException {
@@ -76,7 +76,7 @@ public class SeckillServiceImpl implements SeckillService {
         try {
             int reduceNumber = seckillDao.reduceNumber(seckillId, nowDate);
             if(reduceNumber<=0){
-                //没有更新到记录,秒杀结束
+                //没有更新的记录,秒杀结束
                 throw new SeckillException("seckill closed");
             }else{
                 //更新秒杀记录
