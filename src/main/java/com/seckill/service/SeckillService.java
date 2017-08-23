@@ -34,7 +34,7 @@ public interface SeckillService {
      * @param seckillId
      * @return
      */
-    Exposer exportSeckillUrl(long seckillId);
+    Exposer exposeSeckillUrl(long seckillId);
 
     /**
      * 执行秒杀操作
