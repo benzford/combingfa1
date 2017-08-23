@@ -1,8 +1,10 @@
 package com.seckill.dao;
 
+import com.seckill.AppStart;
 import com.seckill.entity.Seckill;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -11,10 +13,8 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"classpath:spring/spring-dao.xml"})
+@SpringBootTest(classes = AppStart.class)
 public class SeckillDaoTest {
     @Resource
     SeckillDao seckillDao;

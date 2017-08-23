@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+  aop:
+    auto: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.seckill.entity
+
