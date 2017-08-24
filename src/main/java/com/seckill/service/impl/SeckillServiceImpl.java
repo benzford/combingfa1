@@ -46,6 +46,15 @@ public class SeckillServiceImpl implements SeckillService {
     }
 
     public Exposer exposeSeckillUrl(long seckillId) {
+        //优化点:缓存优化
+        /**
+         * get from cache
+         * if null
+         *      get db
+         * else
+         *      cache
+         * login
+         */
         Seckill seckill = seckillDao.queryById(seckillId);
         if(seckill==null){
             return new Exposer(false,seckillId);
