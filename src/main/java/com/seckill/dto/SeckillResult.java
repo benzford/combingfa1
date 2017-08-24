@@ -15,6 +15,22 @@ public class SeckillResult<T> {
         this.error = error;
     }
 
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
     public boolean isSuccess() {
         return success;
     }

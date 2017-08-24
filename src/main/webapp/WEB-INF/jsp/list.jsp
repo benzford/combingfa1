@@ -31,7 +31,6 @@
                     <th>开始时间</th>
                     <th>结束时间</th>
                     <th>创建时间</th>
-                    <th>结束时间</th>
                     <th>详情页</th>
                 </tr>
                 </thead>
@@ -50,7 +49,7 @@
                                 <fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
                             </td>
                             <td>
-                                <a class="btn btn-info" href="/seckill/${sk.seckillId}/detail" target="_blank"></a>
+                                <a class="btn btn-info" href="/seckill/${sk.seckillId}/detail" target="_blank">link</a>
                             </td>
                         </tr>
                     </c:forEach>
