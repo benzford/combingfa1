@@ -6,18 +6,18 @@
  http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <!--<bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource">-->
-        <!--<property name="driverClass" value="${driver}"/>-->
-        <!--<property name="jdbcUrl" value="${url}"/>-->
-        <!--<property name="user" value="${username}"/>-->
-        <!--<property name="password" value="${password}"/>-->
-        <!--&lt;!&ndash;<property name="maxPoolSize" value="20"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;<property name="minPoolSize" value="10"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;关闭链接后不自动commit&ndash;&gt;-->
-        <!--<property name="autoCommitOnClose" value="false"/>-->
-        <!--&lt;!&ndash;获取链接超时时间&ndash;&gt;-->
-        <!--&lt;!&ndash;<property name="checkoutTimeout" value="10000"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;当获取链接失败重试次数&ndash;&gt;-->
-        <!--&lt;!&ndash;<property name="acquireRetryAttempts" value="5"/>&ndash;&gt;-->
+    <!--<property name="driverClass" value="${driver}"/>-->
+    <!--<property name="jdbcUrl" value="${url}"/>-->
+    <!--<property name="user" value="${username}"/>-->
+    <!--<property name="password" value="${password}"/>-->
+    <!--&lt;!&ndash;<property name="maxPoolSize" value="20"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="minPoolSize" value="10"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;关闭链接后不自动commit&ndash;&gt;-->
+    <!--<property name="autoCommitOnClose" value="false"/>-->
+    <!--&lt;!&ndash;获取链接超时时间&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="checkoutTimeout" value="10000"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;当获取链接失败重试次数&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="acquireRetryAttempts" value="5"/>&ndash;&gt;-->
     <!--</bean>-->
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -36,8 +36,12 @@
     </bean>
     <!--配置dao接口扫描,注入spring容器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-    <property name="basePackage" value="com.seckill.dao"/>
-
-</bean>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="com.seckill.dao"/>
+    </bean>
+    <!--redisDao-->
+    <bean class="com.seckill.dao.cache.RedisDao" id="redisDao">
+        <constructor-arg index="0" value="192.168.241.130"/>
+        <constructor-arg index="1" value="6379"/>
+    </bean>
 </beans>
