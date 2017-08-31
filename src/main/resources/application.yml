@@ -1,3 +1,4 @@
+
 spring:
   profiles:
     active: dev
@@ -7,4 +8,5 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml
   type-aliases-package: com.seckill.entity
-
+server:
+  port: 8080

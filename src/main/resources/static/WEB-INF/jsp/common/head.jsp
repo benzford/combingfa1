@@ -3,7 +3,7 @@
   User: 兴
   Date: 2017/8/23
   Time: 23:32
-  To change this template use File | Settings | File Templates.
+  To change this templates use File | Settings | File Templates.
 --%>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- 引入 Bootstrap -->
